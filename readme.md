@@ -4,9 +4,9 @@ diskutil unmountDisk /dev/disk4
 sudo dd bs=1m if=2016-03-25-28r-lite.img of=/dev/disk4
 
 
-
+# resize file system
 raspi-config
 apt-get update
 apt-get install python-falcon
 echo brighty > /etc/hosts
-curl -L https://raw.githubusercontent.com/chrisdpa/noise/master/po.py | sudo python
+nohup sh -c "curl -L https://raw.githubusercontent.com/chrisdpa/noise/master/po.py | sudo python &"

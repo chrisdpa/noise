@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-import falcon
+import falcon, time
 from wsgiref import simple_server
 
 
@@ -27,6 +27,8 @@ class NoiseThread():
     def on_get(self, req, resp, action):
         if action == 'on':
             self.light.set_output(0)
+            time.sleep(5)
+            self.light.set_output(1)
         if action == 'off':
             self.light.set_output(1)
         if action == 'loud':

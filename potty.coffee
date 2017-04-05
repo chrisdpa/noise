@@ -15,4 +15,4 @@ module.exports = (robot) ->
 
   robot.listeners.push new HubotSlack.SlackBotListener robot, /normal/, (msg) ->
     robot.http("http://brighty.local/noise/off").get() (err, res, body) ->
-      msg.send "oh :toilet:"
+      msg.send ":toilet:"
